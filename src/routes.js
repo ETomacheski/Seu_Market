@@ -6,7 +6,7 @@ routes.get('/cadastro', (req,res) => {
 });
 
 routes.post('/cadastro', (req, res) => {
-    console.log('submeteu');
+    console.log(req.body);
 });
 
 module.exports = routes;
