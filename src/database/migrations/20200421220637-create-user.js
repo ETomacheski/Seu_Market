@@ -14,9 +14,6 @@ module.exports = {
             type: Sequelize.STRING,
             allowNull: false
           },
-          company_name:{
-            type: Sequelize.STRING
-          },
           email:{
             type: Sequelize.STRING,
             unique:true,
@@ -28,7 +25,6 @@ module.exports = {
           },
           cnpj:{
             type: Sequelize.STRING,
-            
           },
           delivery_time:{
             type: Sequelize.STRING,
