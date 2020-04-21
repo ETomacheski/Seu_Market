@@ -1,5 +1,7 @@
 'use strict';
 
+const sequelize = require('sequelize');
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     
@@ -25,6 +27,7 @@ module.exports = {
           },
           cnpj:{
             type: Sequelize.STRING,
+            unique:true,
           },
           delivery_time:{
             type: Sequelize.STRING,
@@ -39,10 +42,12 @@ module.exports = {
           },
           created_at:{
             type: Sequelize.DATE,
+            defaultValue: sequelize.literal('NOW()'),
             allowNull:false,
           },
           updated_at:{
             type: Sequelize.DATE,
+            defaultValue: sequelize.literal('NOW()'),
             allowNull:false,
           },
        });
