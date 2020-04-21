@@ -25,6 +25,7 @@ module.exports = {
           },
           cnpj:{
             type: Sequelize.STRING,
+            unique:true,
           },
           delivery_time:{
             type: Sequelize.STRING,
