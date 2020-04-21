@@ -9,7 +9,6 @@ module.exports = {
           primaryKey:true,
           autoIncrement:true,
           allowNull:false,
-
           },
           name:{
             type: Sequelize.STRING,
@@ -17,7 +16,6 @@ module.exports = {
           },
           company_name:{
             type: Sequelize.STRING
-            
           },
           email:{
             type: Sequelize.STRING,
