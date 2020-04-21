@@ -1,0 +1,19 @@
+form {
+    display: flex; flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+
+input, select {
+    height: 3vh;
+    margin-bottom: 2%;
+}
+
+button {
+    height: 30px;
+    width: 30%;
+    margin: auto;
+    border-radius: 2%;
+    background-color: green;
+    border-color: green;
+}

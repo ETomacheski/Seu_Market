@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <form action="/cadastro" method="POST">
+        
+    <label for="name">Seu nome ou da empresa</label>
+    <input type="text" name="name">
+    
+    <label for="email">Seu email ou da empresa</label>
+    <input type="email" name="email">
+    
+    <label for="delivery_time">Horário disponível para entregas:</label>
+    <select name="delivery_time" id="">
+        <option value="manha">Manhã</option>
+        <option value="tarde">Tarde</option>
+        <option value="noite">Noite</option>
+        <option value="anyone">Posso fazer entregas em qualuqer turno</option>
+    </select>
+
+    <label for="city">Cidade</label>
+    <select name="city" id="">
+        <option value="Canoas">Canoas</option>
+        <option value="Ijuí">Ijuí</option>
+    </select>
+    
+    <label for="phone">Número de whatsapp</label>
+    <input type="text">
+
+    <button type="submit">Cadastrar</button>
+    
+</form>
+
+</body>
+</html>
