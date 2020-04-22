@@ -5,7 +5,7 @@ module.exports = {
     async index(req,res){
         const users = await User.findAll();
         console.log(users)
-        return res.end(users);
+        return res.json(users);
     },
 
     async create(req,res){
