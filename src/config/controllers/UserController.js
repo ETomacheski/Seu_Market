@@ -1,12 +1,13 @@
 const User = require('../../models/user');
 
-
 module.exports = {
+
     async index(req,res){
         const users = await User.findAll();
         console.log(users)
         return res.end(users);
     },
+
     async create(req,res){
 
         const { name, email,password, delivery_time, city, phone } = req.body;
