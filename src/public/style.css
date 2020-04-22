@@ -4,7 +4,7 @@ form {
     margin: auto;
 }
 
-input, select {
+input, select, label {
     height: 3vh;
     margin-bottom: 2%;
 }
