@@ -1,26 +1,19 @@
 const path = require('path')
 const express = require('express');
 const routes = express.Router();
-
-const multer  = require('multer');
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'uploads/')
-    },
-    filename: function (req, file, cb) {
-        cb(null, Date.now() + path.extname(file.originalname)) //Appending extension
-    }
-});
-
-const upload = multer({ storage: storage });
+const multer = require('./multer');
+const UserModel = require('./models/User');
 
 routes.get('/cadastro', (req,res) => {
     res.render('register');
 });
 
-routes.post('/cadastro', upload.single('image'), (req, res) => {
-    console.log(req.body);
-    console.log(req.file.path);
+routes.post('/cadastro', multer.single('image'), (req, res) => {
+    const { name, email, delivery_time, city } = req.body;
+    console.log(name);
+    const image = req.file.path;
+    console.log(image);
+    // UserModel.create()
 });
 
 module.exports = routes;
