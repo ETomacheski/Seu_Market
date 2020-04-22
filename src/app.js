@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require("body-parser");
 
 const routes = require('./routes');
+require('./database/index')
 
 app.use(express.static('./src/public'));
 app.set('views', path.join(__dirname, 'views'));
