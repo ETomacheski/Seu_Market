@@ -7,7 +7,7 @@ module.exports = (multer({
         destination: (req, file, cb) => {
          
             // Setamos o destino como segundo paramêtro do callback
-            cb(null, './uploads');
+            cb(null, './src/uploads');
         },
         
         filename: (req, file, cb) => {

@@ -5,6 +5,9 @@ const Product = require('../models/Product');
 
 const connection = new Sequelize(dbconfig);
 
+User.init(connection.models);
+Product.init(connection.models);
+
 User.associate(connection.models);
 Product.associate(connection.models);
 
