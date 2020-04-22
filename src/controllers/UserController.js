@@ -1,10 +1,9 @@
-const User = require('../../models/user');
+const User = require('../models/user');
 
 module.exports = {
 
     async index(req,res) {
         const users = await User.findAll();
-        console.log(users)
         return res.json(users);
     },
 
@@ -18,7 +17,6 @@ module.exports = {
         }
 
         const user = await User.create({name, email, password, image: image, delivery_time, phone});
-        console.log(user)
 
         return res.redirect('/');
     
