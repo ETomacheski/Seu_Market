@@ -9,5 +9,8 @@ routes.get('/cadastro', (req,res) => {
 });
 
 routes.post('/cadastro', multer.single('image'), UserController.create);
+routes.get('/list',UserController.index);
+
+
 
 module.exports = routes;
