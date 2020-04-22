@@ -22,7 +22,7 @@ module.exports = (multer({
      
             // Procurando o formato do arquivo em um array com formatos aceitos
       	     // A função vai testar se algum dos formatos aceitos do ARRAY é igual ao formato do arquivo.
-            const isAccepted = ['image/png', 'image/jpg', 'image/jpeg'].find( formatoAceito => formatoAceito == file.mimetype );
+            const isAccepted = ['image/png', 'image/jpg', 'image/jpeg', undefined].find( formatoAceito => formatoAceito == file.mimetype );
 
             if(isAccepted) {
                 // Executamos o callback com o segundo argumento true (validação aceita)

@@ -9,11 +9,18 @@ routes.get('/cadastro', (req,res) => {
 });
 
 routes.post('/cadastro', multer.single('image'), (req, res) => {
-    const { name, email, delivery_time, city } = req.body;
-    console.log(name);
-    const image = req.file.path;
-    console.log(image);
-    // UserModel.create()
+
+    console.log(req.body);
+    
+    const { name, email, delivery_time, city, phone } = req.body;
+    var image;
+    
+    if (req.file != null) {
+        image = req.file.path;
+    }
+
+    // UserModel.create();
+    
 });
 
 module.exports = routes;
