@@ -31,8 +31,16 @@ module.exports = {
         })
 
         return res.json(product);
-    }
-
+    },
+    async delete(req,res){
+        const {id} = req.params;
+ 
+        const product = await Product.findOne({ where: { id: id } });
+ 
+        product.destroy();
+ 
+        res.end("Produto removido com sucesso");
+     }
 
 
 }

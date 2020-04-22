@@ -16,6 +16,7 @@ routes.delete('/usuarios/:id', UserController.delete);
 
 routes.post('/produtos/:id', multer.single('image'), ProductController.create);
 routes.get('/produtos/:id', multer.single('image'), ProductController.index);
+routes.delete('/produtos/:id', multer.single('image'), ProductController.delete);
 
 
 module.exports = routes;
