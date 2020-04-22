@@ -20,5 +20,14 @@ module.exports = {
 
         return res.redirect('/');
     
+    },
+    async delete(req,res){
+       const {id} = req.params;
+
+       const user = await User.findOne({ where: { id: id } });
+
+       user.destroy();
+
+       res.end("Usuário removido com sucesso");
     }
 }

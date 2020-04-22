@@ -10,5 +10,6 @@ routes.get('/cadastro', (req,res) => {
 
 routes.post('/cadastro', multer.single('image'), UserController.create);
 routes.get('/usuarios', UserController.index);
+routes.delete('/usuarios/:id', UserController.delete);
 
 module.exports = routes;
