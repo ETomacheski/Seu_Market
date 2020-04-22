@@ -9,7 +9,7 @@ const connection = new Sequelize(dbconfig);
 User.init(connection);
 Product.init(connection);
 
-//User.associate(connection.models);
-//Product.associate(connection.models);
+User.associate(connection.models);
+Product.associate(connection.models);
 
 module.exports = connection;
