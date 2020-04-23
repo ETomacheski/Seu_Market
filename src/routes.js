@@ -13,6 +13,10 @@ routes.get('/cadastro', (req,res) => {
 });
 routes.post('/cadastro', multer.single('image'), UserController.create);
 
+// Get de Usuario unico
+routes.get('/usuario/:id', UserController.uniqueUser);
+
+// Update e delete.
 routes.delete('/usuario/:id', UserController.delete);
 routes.put('/usuario/:id', UserController.update);
 

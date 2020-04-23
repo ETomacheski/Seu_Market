@@ -55,5 +55,18 @@ module.exports = {
         
         return res.json(user);
         
+    },
+
+    async uniqueUser(req, res) {
+
+        const { id } = req.params;
+        const user = await User.findOne({where: {id: id}});
+        
+        if(user == null) {
+            return res.status(404).render('404_error_template');
+        }
+
+        return res.json(user);
     }
+
 }
