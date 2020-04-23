@@ -1,8 +1,8 @@
 const User = require('../models/user');
 const Product = require('../models/Product');
 
-
 module.exports = {
+
     async index(req,res){
         const {id} = req.params;
 
@@ -12,6 +12,7 @@ module.exports = {
 
         return res.json(user);
     },
+
     async create(req,res){
         const { id } = req.params;
         const {name,description,price,image} = req.body;
@@ -21,6 +22,7 @@ module.exports = {
         if(!user){
             return res.status(400).json({error: 'User not found'});
         }
+
         const user_id = id;
         const product = await Product.create({
             name,
@@ -32,6 +34,7 @@ module.exports = {
 
         return res.json(product);
     },
+
     async delete(req,res){
         const {id} = req.params;
  
@@ -42,8 +45,4 @@ module.exports = {
         res.end("Produto removido com sucesso");
      }
 
-
 }
-
-
-

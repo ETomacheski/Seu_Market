@@ -9,6 +9,7 @@ module.exports = {
 
     async create(req,res) {
 
+        console.log(req.body);
         const { name, email,password, delivery_time, city, phone } = req.body;
         var image = null;
         
@@ -21,13 +22,14 @@ module.exports = {
         return res.redirect('/');
     
     },
+
     async delete(req,res){
-       const {id} = req.params;
+       
+        const {id} = req.params;
+        const user = await User.findOne({ where: { id: id } });
 
-       const user = await User.findOne({ where: { id: id } });
+        user.destroy();
 
-       user.destroy();
-
-       res.end("Usuário removido com sucesso");
+        res.end("Usuário removido com sucesso");
     }
 }
