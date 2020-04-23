@@ -10,6 +10,7 @@ module.exports = {
           autoIncrement: true,
           allowNull: false,
         },
+
         user_id:{
           type: Sequelize.INTEGER,
           allowNull: false,
@@ -17,18 +18,22 @@ module.exports = {
           onUpdate:'CASCADE',
           onDelete:'CASCADE',
         },
+
         price:{
           type: Sequelize.DOUBLE,
           allowNull:false,
         },
+
         name:{
           type: Sequelize.STRING,
           allowNull:false,
         },
+
         description:{
           type: Sequelize.STRING,
           allowNull:false,
         },
+
         image:{
           type: Sequelize.STRING,
 
@@ -38,6 +43,7 @@ module.exports = {
           type: Sequelize.DATE,
           
         },
+        
         updated_at:{
           type: Sequelize.DATE,
           

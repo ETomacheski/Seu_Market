@@ -10,13 +10,14 @@ module.exports = {
 
     async create(req,res) {
 
-        const { name, email, password, delivery_time, city, phone } = req.body;
+        var { name, email, password, delivery_time, city, phone } = req.body;
+        var image = null;
         
         const salt = bcrypt.genSaltSync(10);
         password = bcrypt.hashSync(password, salt);
 
-
-        var image = null;
+        // bcrypt.compareSync(req.body.password, user.password));
+        
         
         if (req.file != null) {
             image = req.file.path;          
@@ -26,10 +27,11 @@ module.exports = {
         {   
             name, 
             email, 
-            hash,
-            image: image, 
-            delivery_time, 
-            phone
+            password,
+            delivery_time,
+            city, 
+            phone,
+            image: image,
         });
 
         return res.redirect('/');
