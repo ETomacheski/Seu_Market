@@ -3,8 +3,8 @@ const Product = require('../models/Product');
 
 module.exports = {
 
-    async index(req,res) {
-        const {id} = req.params;
+    async index(req, res) {
+        const { id } = req.params;
 
         const user = await User.findByPk(id, {
             include: { association : 'products' }
@@ -13,9 +13,9 @@ module.exports = {
         return res.json(user);
     },
 
-    async create(req,res) {
+    async create(req, res) {
         const { id } = req.params;
-        const { name,description,price,image } = req.body;       
+        const { name, description, price, image } = req.body;       
         const user_id = id;
         
         const product = await Product.create({
@@ -30,7 +30,7 @@ module.exports = {
     },
 
     async delete(req, res) {
-        const {id} = req.params;
+        const { id } = req.params;
  
         const product = await Product.findOne({ where: { id: id } });
  
