@@ -15,15 +15,9 @@ module.exports = {
 
     async create(req,res) {
         const { id } = req.params;
-        const {name,description,price,image} = req.body;
-        console.log(id);
-        const user = await User.findByPk(id);
-
-        if(!user){
-            return res.status(400).json({error: 'User not found'});
-        }
-
+        const { name,description,price,image } = req.body;       
         const user_id = id;
+        
         const product = await Product.create({
             name,
             description,
