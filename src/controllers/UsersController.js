@@ -37,7 +37,7 @@ module.exports = {
 
         user.destroy();
 
-        res.end("Usuário removido com sucesso");
+        return res.redirect('/usuarios');
     },
 
     async update(req, res) {
