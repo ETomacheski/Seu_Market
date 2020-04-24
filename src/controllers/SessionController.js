@@ -19,16 +19,19 @@ class SessionController{
             return res.status(401).json({message:'Incorect password'});
         }
 
-        //const token = jwt.sign({id:user.id}, process.env.APP_SECRET);
-        return res.json({
-            user,
-            token: jwt.sign({id:user.id}, process.env.APP_SECRET)
-        });
+        const token = jwt.sign({id:user.id}, process.env.APP_SECRET);
+        // return res.json({
+        //     user,
+        //     token: jwt.sign({id:user.id}, process.env.APP_SECRET)
+        // });
         
         //res.setHeader('authorization',token).redirect("/teste");
         // res.setHeader('authorization', token);
         // res.redirect("/teste");
         //res.status(200).send({ auth: true, token: token });
+        //req.session.loggedin = true;
+        req.session.token = token;
+        res.redirect('/teste')
     
     }
 }
