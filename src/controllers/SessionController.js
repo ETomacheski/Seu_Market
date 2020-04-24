@@ -1,6 +1,7 @@
 const User = require('../models/user');
 const bacrypt = require('bcrypt');
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const localStorage = require('localstorage')
 
 
 class SessionController{
@@ -18,10 +19,16 @@ class SessionController{
             return res.status(401).json({message:'Incorect password'});
         }
 
+        // token = jwt.sign({id:user.id}, process.env.APP_SECRET);
         return res.json({
             user,
             token: jwt.sign({id:user.id}, process.env.APP_SECRET)
         });
+        
+        //res.setHeader('authorization',token).redirect("/teste");
+        
+        
+    
     }
 }
 
