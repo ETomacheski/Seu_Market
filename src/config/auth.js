@@ -8,9 +8,10 @@ module.exports = async (req,res,next)=>{
         return res.status(401).json({message: "Token not provided"});
     }
 
+    const [, token] = authHeader.split(' ');
 
     try{
-        const decoded = await promisify(jwt.verify)(authHeader,process.env.APP_SECRET);
+        const decoded = await promisify(jwt.verify)(token,process.env.APP_SECRET);
 
         req.userId = decoded.id
         return next()
