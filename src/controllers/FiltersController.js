@@ -13,7 +13,7 @@ module.exports = {
 
         return res.json(product);
     },
-    async index(req,res) {
+    async listUsers(req,res) {
         
         const { city } = req.params;
         
