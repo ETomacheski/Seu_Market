@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
-    <link rel="stylesheet" href="style.css">
+  <title>SEU MARKET</title>
+  <link rel="stylesheet" type="text/css" href="css/sign.css">
+  <script type="text/javascript" src="css/sign.js"></script>
 </head>
 <body>
-    
-    <form action="/cadastro" method="POST" enctype="multipart/form-data">
-        
+ <div class="login-page">
+  <div class="form">
+   <form action="/cadastro" method="POST" enctype="multipart/form-data">
+   
     <label for="name">Seu nome ou da empresa</label>
     <input type="text" name="name">
     
     <label for="email">Seu email ou da empresa</label>
     <input type="email" name="email">
 
-    <label for="password">Senha para acesso</label>
-    <input type="password" name="password">
+    <label for="passowrd">Senha de acesso</label>
+    <input type="password" name="password" id="">
     
     <label for="delivery_time">Horário disponível para entregas:</label>
     <select name="delivery_time" id="">
@@ -26,22 +26,26 @@
         <option value="noite">Noite</option>
         <option value="qualquer">Posso fazer entregas em qualquer turno</option>
     </select>
-
+    <br>
+    <br>
     <label for="city">Cidade</label>
+    <br>
     <select name="city" id="">
-        <option value="Canoas">Canoas</option>
-        <option value="Ijuí">Ijuí</option>
+      <option value="Charqueadas">Charqueadas - RS</option>
+      <option value="São Jerônimo">São Jerônimo - RS</option>
     </select>
-
+    <br>
+    <br>
     <label for="phone">Número de whatsapp</label>
     <input type="text" name="phone">
 
     <label for="image">Foto de perfil da empresa (opcional)</label>
     <input type="file" name="image">
 
-    <button type="submit">Cadastrar</button>
-    
-</form>
-
+    <button type="submit">CADASTRAR</button>
+  </form>
+  </div>
+ </div>
+ 
 </body>
 </html>
