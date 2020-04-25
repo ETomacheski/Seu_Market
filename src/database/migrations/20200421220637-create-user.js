@@ -31,7 +31,7 @@ module.exports = {
 
           city:{
             type: Sequelize.STRING,
-            unique:true,
+            allowNull:false,
           },
 
           delivery_time:{

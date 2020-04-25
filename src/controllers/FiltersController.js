@@ -13,4 +13,13 @@ module.exports = {
 
         return res.json(product);
     },
+    async index(req,res) {
+        
+        const { city } = req.params;
+        
+        const users =  await User.findOneAll({ where: {city:city}});
+
+        return res.json(users);
+    },
+
 }
