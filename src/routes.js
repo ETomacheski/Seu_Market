@@ -32,6 +32,7 @@ routes.get('/usuarios', UserController.index);
 routes.get('/cadastro', (req,res) => {
     res.render('register');
 });
+
 routes.post('/cadastro', multer.single('image'), UserController.create);
 
 
@@ -56,6 +57,9 @@ routes.get('/users/:city', FilterController.listUsers);
 
 
 // Session
+routes.get('/login', (req, res) => {
+    res.render('login')
+})
 routes.post('/login', SessionController.store);
 
 

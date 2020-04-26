@@ -30,40 +30,36 @@
   </head>
   <body class="goto-here">
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-      <div class="container">
-         <a class="navbar-brand" href="/" style="margin-top: 1%;">
+	    <div class="container">
+         <a class="navbar-brand" href="#" style="margin-top: 1%;">
           <img src="./images/logo.png" width="60" height="60" alt="">
         </a>
-        <a class="navbar-brand" href="/">SEU MARKET</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="oi oi-menu"></span> Menu
-        </button>
-    <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav ml-auto">
-             <li class="nav-item active"><a href="/login" class="nav-link">ENTRAR</a></li>
-              <li class="nav-item active"><a href="/cadastro" class="nav-link">CADASTRAR-SE (PRODUTOR)</a></li>
-            <li class="nav-item active"><a href="/" class="nav-link">Início</a></li>
-            <li class="nav-item dropdown">
-            </li>
-            <li class="nav-item"><a href="/contato" class="nav-link">Contato</a></li>
-            <li class="nav-item cta cta-colored"><a href="/carrinho" class="nav-link"><span class="icon-shopping_cart"></span></a></li>
+	      <a class="navbar-brand" href="produtor.html">SEU MARKET</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
 
-          </ul>
-        </div>
-      </div>
-    </nav>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="/" class="nav-link">SAIR</a></li>
+	          <li class="nav-item cta cta-colored"><a href="produtor.html" class="nav-link"><span class="icon-shopping_cart"></span></a></li>
+
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-            <h1 class="mb-0 bread">CADASTRE-SE COMO PRODUTOR</h1>
+            <h1 class="mb-0 bread">CADASTRE SEUS PRODUTOS</h1>
           </div>
         </div>
       </div>
     </div>
 
     <section class="ftco-section">
-      <div class="container">
+    	<div class="container">
       <!--   <div class="row">
           <div class="col-lg-6 mb-5 ftco-animate">
             <a href="images/product-1.jpg" class="image-popup"><img src="images/product-1.jpg" class="img-fluid" alt="Colorlib Template"></a>
@@ -72,65 +68,37 @@
     <div>
       <div class="panel panel-primary">
         <div class="panel-body">
-          <form action="/cadastro" method="POST" enctype="multipart/form-data">
+          <form method="POST" action="#" role="form">
             <div class="form-group">
-              <h2>CADASTRE-SE EM NOSSA PLATAFORMA E VENDA SEUS PRODUTOS!</h2>
+              <h2>Cadastre seus produtos!</h2>
             </div>
             <div class="form-group">
-              <label class="control-label" for="name">SEU NOME OU DA EMPRESA:</label>
-              <input type="text" maxlength="30" class="form-control" id="name" required>
+              <label class="control-label" for="name">NOME DO PRODUTO:</label>
+              <input type="text" maxlength="50" class="form-control" id="name" required>
             </div>
             <div class="form-group">
-              <label class="control-label" for="email">SEU EMAIL OU DA EMPRESA:</label>
-              <input id="email" type="email" class="form-control" required>
+              <label class="control-label" for="price">PREÇO DO PRODUTO (R$):</label>
+              <input id="price" type="number" maxlength="50" class="form-control" required>
             </div>
             <div class="form-group">
-              <label class="control-label" for="password">SENHA DE ACESSO:</label>
-              <input id="password" type="password" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label class="control-label" for="phone">NÚMERO DE WHATSAPP:</label>
-              <input id="phone" type="text" maxlength = "11" class="form-control" required>
-            </div>
-            <div class="form-group">
-               <label for="delivery_time" class="control-label">HORÁRIO DISPONÍVEL PARA ENTREGAS:</label>
-                  <br>
-                  <select name="delivery_time" id="" class="form-control" required>
-                  <option value="manhã">Manhã</option>
-                  <option value="tarde">Tarde</option>
-                  <option value="noite">Noite</option>
-                  <option value="qualquer">Posso fazer entregas em qualquer turno</option>
-                  </select>
-            </div>
-            <div class="form-group">
-               <label for="city" class="control-label">SELECIONE SUA CIDADE:</label>
-                  <br>
-                  <select name="city" id="" class="form-control" required>
-                  <option value="ch">Charqueadas-RS</option>
-                  <option value="sj">São Jerônimo-RS</option>
-                  </select>
-            </div>
-            <div class="form-group">
-              <label class="control-label" for="desc">DESCRIÇÃO PRÉVIA SUA E DO SEU TRABALHO (OPCIONAL):</label>
+              <label class="control-label" for="desc">DESCRIÇÃO PRÉVIA DO PRODUTO:</label>
               <br>
-              <textarea style="width: 100%; height: 100%;" id="desc"></textarea>
+              <textarea style="width: 100%; height: 100%;" id="desc" required></textarea>
             </div>
               <div class="form-group">
-              <label class="control-label" for="image">FOTO DE PERFIL (OPCIONAL)</label>
-              <input id="image" type="file"class="form-control">
+              <label class="control-label" for="img">ENVIE UMA IMAGEM DO PRODUTO</label>
+              <input id="img" type="file"class="form-control" required>
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-success btn-block">
-                CADASTRAR
-            </button>
+              <button id="cadastrar" type="submit" class="btn btn-success btn-block">CADASTRAR</button>
             </div>
           </form>
         </div>
       </div>
     </div>
   </div>
-        </div>
-      </div>
+    		</div>
+    	</div>
     </section>
     <footer class="ftco-footer ftco-section">
     <div class="container">
@@ -195,41 +163,41 @@
   <script src="js/main.js"></script>
 
   <script>
-    $(document).ready(function(){
+		$(document).ready(function(){
 
-    var quantitiy=0;
-       $('.quantity-right-plus').click(function(e){
-            
-            // Stop acting like a button
-            e.preventDefault();
-            // Get the field name
-            var quantity = parseInt($('#quantity').val());
-            
-            // If is not undefined
-                
-                $('#quantity').val(quantity + 1);
+		var quantitiy=0;
+		   $('.quantity-right-plus').click(function(e){
+		        
+		        // Stop acting like a button
+		        e.preventDefault();
+		        // Get the field name
+		        var quantity = parseInt($('#quantity').val());
+		        
+		        // If is not undefined
+		            
+		            $('#quantity').val(quantity + 1);
 
-              
-                // Increment
-            
-        });
+		          
+		            // Increment
+		        
+		    });
 
-         $('.quantity-left-minus').click(function(e){
-            // Stop acting like a button
-            e.preventDefault();
-            // Get the field name
-            var quantity = parseInt($('#quantity').val());
-            
-            // If is not undefined
-          
-                // Increment
-                if(quantity>0){
-                $('#quantity').val(quantity - 1);
-                }
-        });
-        
-    });
-  </script>
+		     $('.quantity-left-minus').click(function(e){
+		        // Stop acting like a button
+		        e.preventDefault();
+		        // Get the field name
+		        var quantity = parseInt($('#quantity').val());
+		        
+		        // If is not undefined
+		      
+		            // Increment
+		            if(quantity>0){
+		            $('#quantity').val(quantity - 1);
+		            }
+		    });
+		    
+		});
+	</script>
     
   </body>
 </html>
