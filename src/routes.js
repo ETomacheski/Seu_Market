@@ -16,8 +16,8 @@ routes.get('/', (req, res) => {
     res.render('index');
 });
 
+// Carrinho
 routes.get('/carrinho', cartController.listAll);
-
 routes.post('/carrinho/', cartController.listByCity);
 
 routes.get('/contato', (req, res) => {
@@ -25,31 +25,25 @@ routes.get('/contato', (req, res) => {
 });
 
 
-// Listagem de usuários.
+// Usuário
 routes.get('/usuarios', UserController.index);
 
-
-// Cadastro de Usuarios
 routes.get('/cadastro', (req,res) => {
     res.render('register');
 });
 
 routes.post('/cadastro', multer.single('image'), UserController.create);
 
-
-// Update e delete.
 routes.delete('/usuario/:id', UserController.delete);
 routes.put('/usuario/:id', UserController.update);
 
 
 // Produtos
-routes.get('/produtos/', ProductController.index);//ex :http://localhost:3333/produtos?id=1
-
-
+// EX de rota :http://localhost:3333/produtos?id=1
+routes.get('/produtos/', ProductController.index);
 
 routes.post('/produtos/:id', multer.single('image'), ProductController.create);
 routes.delete('/produtos/:id', ProductController.delete);
-
 
 // Pesquisas
 // routes.get('/produtos/:id/:name', FilterController.index);
@@ -63,7 +57,7 @@ routes.get('/login', (req, res) => {
 routes.post('/login', SessionController.store);
 
 
-// Apartir daqui todas as rotas so poderam ser acessadas se estiverem autenticadas
+// Rotas autenticadas
 routes.use(Auth);
 
 routes.get('/add', (req, res) => {
