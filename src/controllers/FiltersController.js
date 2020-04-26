@@ -7,18 +7,20 @@ module.exports = {
         
         const { id } = req.params;
         
-        const product =  await Product.findOneAll({ where: {user_id:id} }, {
-            include: { association : 'products' }
+        const product =  await Product.findOne({ where: {user_id: id} }, {
+            include: { association: 'products' }
         });
 
         return res.json(product);
     },
+
     async listUsers(req, res) {
         
         const city = req.query.cidade;
-        const users =  await User.findOneAll({ where: {city:city}});
+        const users =  await User.findAll({ where: {city: city}});
 
-        return res.json(users);
+        res.render('cart', {users: users});
+
     },
 
 }

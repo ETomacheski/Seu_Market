@@ -99,71 +99,26 @@
 						      </tr>
 						    </thead>
 						    <tbody>
-						      <tr class="text-center">
-						        <td class="product-remove">•</td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/produtor1.jpg);"></div></td>
-						        
-						        <td class="product-name">
-						        
-						        	<p>Produtos frescos, trabalho no ramo da agricultura há 20 anos, veja meus produtos orgânicos!</p>
-						        </td>
-						        
-						        <td class="price">João da Silva/td>
-						        
-						        <td>
-						        	Manhã
-					          </td>
-						        
-						        <td  class="total" style="font-size: 70px;"> 
-							  	<a href="/produtos">
-							  		>
-							  	</a>
-							</td>
-						      </tr>
-
-						      <tr class="text-center">
-						        <td class="product-remove">•</td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/produtor2.jpg);"></div></td>
-						        
-						        <td class="product-name">
-						        	<p>Compre comigo! Trabalho somente com produtos saudáveis e orgânicos, para sua família!</p>
-						        </td>
-						        
-						        <td class="price">Alzemiro Cavares</td>
-						        
-						        <td class="quantity">
-					             	Tarde e Noite
-					          	</div>
-					          </td>
-						        
-							  <td  class="total" style="font-size: 70px;"> 
-							  	<a href="/produtos">
-							  		>
-							  	</a>
-							</td>
-							  </tr>
-							  <tr class="text-center">
-						        <td class="product-remove">•</td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/produtor3.jpg);"></div></td>
-						        
-						        <td class="product-name">
-						        	<p>Perito em produtos orgânicos, posso trazer melhor qualidade de vida para sua família!</p>
-						        </td>
-						        
-						        <td class="price">Pedro Santos</td>
-						        
-						        <td >
-						     		Todos os turnos disponíveis
-					          </td>
-						     <td  class="total" style="font-size: 70px;"> 
-							  	<a href="/produtos">
-							  		>
-							  	</a>
-								</td>
-						      </tr>
+								<% users.forEach(user => { %>
+									<tr class="text-center">
+										<td class="product-remove">•</td>
+										<td class="image-prod"><div class="img" style="background-image:url(images/produtor1.jpg);"></div></td>
+										
+										<td class="product-name">
+											<p><%= user.description %></p>
+										</td>
+										
+										<td class="price"><%= user.name %></td>
+										
+										<td><%= user.delivery_time %></td>
+										
+										<td class="total" style="font-size: 70px;"> 
+										<a href="/produtos">
+											>
+										</a>
+									</td>
+									</tr>
+								<% }) %>		
 						    </tbody>
 						  </table>
 					  </div>
@@ -219,10 +174,7 @@
 		  </div>
 		  <div class="row">
 			<div class="col-md-12 text-center">
-  
-			  <p>
-							Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | SEU MARKET
-						  </p>
+			  <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | SEU MARKET</p>
 			</div>
 		  </div>
 		</div>

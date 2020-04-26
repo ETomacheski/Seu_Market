@@ -19,6 +19,8 @@ routes.get('/carrinho', (req, res) => {
     res.render('cart');
 });
 
+routes.post('/carrinho/', FilterController.listUsers);
+
 routes.get('/contato', (req, res) => {
     res.render('contact');
 });
@@ -52,12 +54,11 @@ routes.delete('/produtos/:id', ProductController.delete);
 
 // Pesquisas
 // routes.get('/produtos/:id/:name', FilterController.index);
-// routes.post('/carrinho', FilterController.listUsers);
 
 
 // Session
 routes.get('/login', (req, res) => {
-    res.render('login')
+    res.render('login');
 });
 
 routes.post('/login', SessionController.store);
