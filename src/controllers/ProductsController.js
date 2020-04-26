@@ -10,7 +10,7 @@ module.exports = {
             include: { association : 'products' }
         });
 
-        res.render('listaprodutos', { product: user.products });
+        res.render('listaprodutos', { product: user.products , phone: user.phone});
     },
 
     async create(req, res) {

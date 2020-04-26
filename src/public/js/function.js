@@ -19,30 +19,28 @@ function precofinal(price, id){
 
 }
 
-function zap(){
-    
-    var preco = precofinal();
-    var cesta1 = document.getElementById('cesta1').value;
-    var cesta2 = document.getElementById('cesta2').value;
-    var cesta3 = document.getElementById('cesta3').value;
-    var produto;
-    if(cesta1!=0){
-        produto="Cesta Pequena, quantidade ="+cesta1+". ";
-    }
-    if(cesta2!=0){
-        produto+="Cesta Média, quantidade = "+cesta2+". ";
-    }
-    if(cesta3!=0){
-        produto+="Cesta Grande, quantidade = "+cesta3+". ";
-    }
+function zap(phone){
+    var soma=0;
+    ids.forEach(id1 => {
+        soma += id1.price*id1.quantidade;
+        
+    })
+    var soma= parseFloat(soma.toFixed(3));
+    var produto="";
+    ids.forEach(id1 => {
+       if(id1.quantidade !=0){
+           produto+=id1.quantidade+" - "+id1.name+"%0D";
+       }
+        
+    })
     var rua = document.getElementById('rua').value;
     var cep = document.getElementById('cep').value;
     var numero = document.getElementById('numero').value;
     var nome = document.getElementById('nome').value;
     
-    var mensagem = "Pedido no valor de "+preco+" reais para o cliente "+nome+"%0D"+"Rua: "+rua+"%0D"+"CEP: "+cep+"%0D"+"Número: "+numero+"%0D";
-   
-    var link = "http://api.whatsapp.com/send?1=pt_BR&phone=558399259116&text="+mensagem+produto;
+    var mensagem = "Pedido no valor de "+soma+" reais para o cliente "+nome+"%0D"+"Rua: "+rua+"%0D"+"Bairro: "+cep+"%0D"+"Número: "+numero+"%0D";
+   console.log(phone);
+    var link = "http://api.whatsapp.com/send?1=pt_BR&phone="+phone+"&text="+mensagem+produto;
     
     return window.open(link, "_blank");
 
@@ -51,13 +49,14 @@ function zap(){
 
 }
 function total(){
-    var soma;
+    var soma=0;
     ids.forEach(id1 => {
-        soma = id1.price*id1.quantidade;
+        soma += id1.price*id1.quantidade;
         
     })
     var soma= parseFloat(soma.toFixed(3));
     document.getElementById("valortotal").innerHTML ="R$"+soma;
+    return total;
 }
 function alterou(id,price,name)
 {
