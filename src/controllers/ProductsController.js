@@ -10,7 +10,7 @@ module.exports = {
             include: { association : 'products' }
         });
 
-        res.render('listaprodutos', {product: user.products});
+        res.render('listaprodutos', { product: user.products });
     },
 
     async create(req, res) {
@@ -36,7 +36,7 @@ module.exports = {
  
         product.destroy();
  
-        res.end("Produto removido com sucesso");
+        res.status(204);
      }
 
 }

@@ -8,6 +8,7 @@ const UserController = require('./controllers/UsersController');
 const ProductController = require('./controllers/ProductsController');
 const FilterController = require('./controllers/FiltersController');
 const SessionController = require('./controllers/SessionController');
+const cartController = require('./controllers/cartController');
 
 // ROUTES 
 
@@ -15,11 +16,9 @@ routes.get('/', (req, res) => {
     res.render('index');
 });
 
-routes.get('/carrinho', (req, res) => {
-    res.render('cart');
-});
+routes.get('/carrinho', cartController.listAll);
 
-routes.post('/carrinho/', FilterController.listUsers);
+routes.post('/carrinho/', cartController.listByCity);
 
 routes.get('/contato', (req, res) => {
     res.render('contact');

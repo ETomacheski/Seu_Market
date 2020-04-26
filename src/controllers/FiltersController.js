@@ -12,15 +12,6 @@ module.exports = {
         });
 
         return res.json(product);
-    },
-
-    async listUsers(req, res) {
-        
-        const city = req.query.cidade;
-        const users =  await User.findAll({ where: {city: city}});
-
-        res.render('cart', {users: users});
-
-    },
+    }
 
 }

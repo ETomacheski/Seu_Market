@@ -1,0 +1,20 @@
+const User = require('../models/user');
+const Product = require('../models/Product');
+
+
+module.exports = {
+
+    async listByCity(req, res) {
+        const city = req.query.cidade;
+        const users =  await User.findAll({ where: {city: city}});
+        
+        res.render('cart', { users: users });
+
+    },
+
+    async listAll(req, res) {
+        const users = await User.findAll();
+        res.render('cart', { users: users });
+    }
+
+}
