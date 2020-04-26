@@ -42,7 +42,9 @@ routes.put('/usuario/:id', UserController.update);
 
 
 // Produtos
-routes.get('/produtos/', ProductController.index);
+routes.get('/produtos/', ProductController.index);//ex :http://localhost:3333/produtos?id=1
+
+
 
 routes.post('/produtos/:id', multer.single('image'), ProductController.create);
 routes.delete('/produtos/:id', ProductController.delete);
