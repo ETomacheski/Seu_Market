@@ -9,8 +9,10 @@ module.exports = {
         const user = await User.findByPk(id, {
             include: { association : 'products' }
         });
-        //return res.json(user)
-        res.render('listaprodutos', {user:user})
+        //console.log(user);
+        return user;
+        // res.render('listaprodutos', {user:user})
+        //res.render('index');
     },
 
     async create(req, res) {
