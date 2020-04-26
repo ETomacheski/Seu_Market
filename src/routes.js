@@ -48,8 +48,8 @@ routes.post('/login', SessionController.store);
 routes.use(Auth);
 
 routes.get('/produtor', (req, res) => {
-    
-})
+    res.render('produtor');
+});
 
 // routes.delete('/produtos/:id', ProductController.delete);
 

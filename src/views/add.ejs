@@ -68,14 +68,14 @@
     <div>
       <div class="panel panel-primary">
         <div class="panel-body">
-          <form method="POST" action="produtos/" role="form">
+          <form method="POST" action="publicar/<%=user%>" role="form">
             <div class="form-group">
               <h2>Cadastre seus produtos!</h2>
             </div>
 
             <div class="form-group">
               <label class="control-label" for="name">NOME DO PRODUTO:</label>
-              <input type="text" maxlength="50" class="form-control" id="name" required>
+              <input type="text" maxlength="50" class="form-control" id="name" name="name" required>
             </div>
 
             <div class="form-group">

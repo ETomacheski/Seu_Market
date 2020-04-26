@@ -24,7 +24,11 @@ app.use(bodyParser.text({defaultCharset: 'utf-8'}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(routes);
+app.use(function(req, res, next) {
+	res.locals.user = req.session.user_id;
+	next();
+});
 
+app.use(routes);
 
 module.exports = app;
