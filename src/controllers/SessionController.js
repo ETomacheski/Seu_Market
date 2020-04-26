@@ -18,7 +18,7 @@ class SessionController{
         const token = jwt.sign({ id: user.id }, process.env.APP_SECRET);
         
         req.session.token = token;
-        res.redirect('/teste')
+        res.redirect('/publicar')
     
     }
 }

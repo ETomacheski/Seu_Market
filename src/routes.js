@@ -58,7 +58,7 @@ routes.post('/login', SessionController.store);
 
 
 // Rotas autenticadas
-// routes.use(Auth);
+routes.use(Auth);
 
 routes.get('/publicar', (req, res) => {
     res.render('add');
