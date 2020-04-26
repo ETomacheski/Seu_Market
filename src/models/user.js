@@ -8,6 +8,7 @@ class User extends Model {
             password: DataTypes.STRING,
             delivery_time: DataTypes.STRING,
             image: DataTypes.STRING,
+            description: DataTypes.STRING,
             city: DataTypes.STRING,
             phone: DataTypes.STRING,
 

@@ -10,7 +10,7 @@ module.exports = {
 
     async create(req,res) {
 
-        var { name, email, password, delivery_time, city, phone } = req.body;
+        var { name, email,description, password, delivery_time, city, phone } = req.body;
         var image = null;
         
         const salt = bcrypt.genSaltSync(10);
@@ -32,6 +32,7 @@ module.exports = {
             city, 
             phone,
             image: image,
+            description
         });
 
         return res.redirect('/');
