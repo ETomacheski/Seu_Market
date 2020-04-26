@@ -1,4 +1,5 @@
-var global = "teste"
+var global = "teste";
+var ids =[];
 function precofinal(price, id){
    
     var antigo =  document.getElementById(id+"total").innerHTML;
@@ -49,15 +50,45 @@ function zap(){
     
 
 }
-function alterou(id,price)
+function total(){
+    var soma;
+    ids.forEach(id1 => {
+        soma = id1.price*id1.quantidade;
+        
+    })
+    var soma= parseFloat(soma.toFixed(3));
+    document.getElementById("valortotal").innerHTML ="R$"+soma;
+}
+function alterou(id,price,name)
 {
    // total();
-
-    var cesta1 = document.getElementById(id).value;
-    console.log(global)
+   var cont =0
+   var cesta1 = document.getElementById(id).value;
+    ids.forEach(id1 => {
+        console.log(id1.id + "==" +id)
+        if(id == id1.id){
+            cont++
+            id1.id= id;
+            id1.name=name;
+            id1.price=price;
+            id1.quantidade= cesta1;
+        }
+        
+    })
     
-    document.getElementById(id+"total").innerHTML = "R$"+cesta1*price;
-}
-function teste(product){
-    console.log("agora foi"+product)
+   
+    if(cont ==0){
+        ids.push({
+            id: id,
+            name:name,
+            price:price,
+            quantidade: cesta1
+        });
+    }
+   
+    console.log(ids)
+    var total = cesta1*price;
+    var total= parseFloat(total.toFixed(3));
+    
+    document.getElementById(id+"total").innerHTML = "R$"+total;
 }
