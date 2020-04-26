@@ -14,10 +14,7 @@ module.exports = {
         var image = null;
         
         const salt = bcrypt.genSaltSync(10);
-        password = bcrypt.hashSync(password, salt);
-
-        // bcrypt.compareSync(req.body.password, user.password));
-        
+        password = bcrypt.hashSync(password, salt);        
         
         if (req.file != null) {
             image = req.file.path;          
