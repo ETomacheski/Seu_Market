@@ -3,7 +3,7 @@ const Product = require('../models/Product');
 
 module.exports = {
 
-    async index(req,res) {
+    async index(req, res) {
         
         const { id } = req.params;
         
@@ -13,10 +13,9 @@ module.exports = {
 
         return res.json(product);
     },
-    async listUsers(req,res) {
+    async listUsers(req, res) {
         
-        const { city } = req.params;
-        
+        const city = req.query.cidade;
         const users =  await User.findOneAll({ where: {city:city}});
 
         return res.json(users);

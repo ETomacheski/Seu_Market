@@ -10011,3 +10011,15 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+form#filtrocidade button {
+  color: white;
+  background-color: rgba(172, 255, 47, 0.062);
+  height: 5.5vh;
+  font-size: 1em;
+  
+}
+
+form#filtrocidade button:hover {
+  cursor: pointer;
+}

@@ -49,7 +49,7 @@ routes.delete('/produtos/:id', ProductController.delete);
 
 // Pesquisas
 routes.get('/produtos/:id/:name', FilterController.index);
-routes.get('/users/:city', FilterController.listUsers);
+routes.post('/carrinho', FilterController.listUsers);
 
 
 // Session
