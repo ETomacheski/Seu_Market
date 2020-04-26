@@ -3,9 +3,9 @@ const User = require('../models/user');
 module.exports = {
 
     async listByCity(req, res) {
-        const city = req.query.cidade;
+        const city = req.body.cidade;
         const users =  await User.findAll({ where: {city: city}});
-        
+              
         res.render('cart', { users: users });
 
     },

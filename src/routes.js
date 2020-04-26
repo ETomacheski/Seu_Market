@@ -18,7 +18,7 @@ routes.get('/', (req, res) => {
 
 // Carrinho
 routes.get('/carrinho', cartController.listAll);
-routes.post('/carrinho/', cartController.listByCity);
+routes.post('/carrinho', cartController.listByCity);
 
 routes.get('/contato', (req, res) => {
     res.render('contact');
