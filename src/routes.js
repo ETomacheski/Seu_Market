@@ -42,21 +42,15 @@ routes.put('/usuario/:id', UserController.update);
 
 
 // Produtos
-routes.get('/produtos/:id', (req,res)=>{
-    const user = ProductController.index(req,res)
-
-    res.render('listaprodutos',{user:user});
-
-});
-
+routes.get('/produtos/:id', ProductController.index);
 
 routes.post('/produtos/:id', multer.single('image'), ProductController.create);
 routes.delete('/produtos/:id', ProductController.delete);
 
 
 // Pesquisas
-routes.get('/produtos/:id/:name', FilterController.index);
-routes.post('/carrinho', FilterController.listUsers);
+// routes.get('/produtos/:id/:name', FilterController.index);
+// routes.post('/carrinho', FilterController.listUsers);
 
 
 // Session

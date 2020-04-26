@@ -88,25 +88,25 @@
 						      </tr>
 						    </thead>
 						    <tbody>
-								<%  for (let users in  user) {%>
+							<% product.forEach(products => { %>
 						      <tr class="text-center">
 						        <td class="product-remove">•</td>
 						        
 						        <td class="image-prod"><div class="img" style="background-image:url(images/cesta-pequena.png);"></div></td>
 						        
 						        <td class="product-name">
-						        	<h3><%=users.id %></h3>
-						        	<p> <%=users.name %></p>
+						        	<h3><%=products.name %></h3>
+						        	<p> <%=products.description %></p>
 						        </td>
 						        
-						        <td class="price">R$10.00</td>
+						        <td class="price">R$<%=products.price %></td>
 						        
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
 					             	<input onchange="alterou()"type="text" id="cesta1" name="quantity" class="quantity form-control input-number" value="0" min="0" max="100">
 					          	</div>
 					          </td>
-							  <% } %>
+							<% }) %>
 						        <td  class="total"  > <p id="total1">R$00.00</p>
 									<script>
 										function alterou()
