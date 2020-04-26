@@ -63,4 +63,14 @@ routes.post('/login', SessionController.store);
 // Apartir daqui todas as rotas so poderam ser acessadas se estiverem autenticadas
 routes.use(Auth);
 
+routes.get('/add', (req, res) => {
+    res.render('produtor');
+});
+
+routes.get('/criar-produto', (req, res) => {
+    res.render('add');
+});
+
+routes.post('/criar-produto', ProductController.create);
+
 module.exports = routes;
