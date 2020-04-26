@@ -4,7 +4,7 @@ const Product = require('../models/Product');
 module.exports = {
 
     async index(req, res) {
-        const { id } = req.params;
+        const id  = req.query.id;
 
         const user = await User.findByPk(id, {
             include: { association : 'products' }
