@@ -5,7 +5,7 @@ module.exports = async (req,res,next)=>{
     const authHeader = req.session.token;
 
     if(!authHeader){
-        return res.status(401).redirect('/');
+        return res.status(401).redirect('/login');
     }
 
     //const [, token] = authHeader.split(' ');
