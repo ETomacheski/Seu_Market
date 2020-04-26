@@ -58,16 +58,17 @@ routes.post('/login', SessionController.store);
 
 
 // Rotas autenticadas
-routes.use(Auth);
+// routes.use(Auth);
 
-routes.get('/add', (req, res) => {
-    res.render('produtor');
-});
-
-routes.get('/criar-produto', (req, res) => {
+routes.get('/publicar', (req, res) => {
     res.render('add');
 });
 
-routes.post('/criar-produto', ProductController.create);
+routes.post('/publicar', ProductController.create);
+
+routes.get('/vender', (req, res) => {
+    res.render('produtor');
+});
+
 
 module.exports = routes;
