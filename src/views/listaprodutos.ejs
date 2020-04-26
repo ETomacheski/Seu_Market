@@ -88,13 +88,14 @@
 						      </tr>
 						    </thead>
 						    <tbody>
+							<%for (let i = 0; i < user; i++) %>
 						      <tr class="text-center">
 						        <td class="product-remove">•</td>
 						        
 						        <td class="image-prod"><div class="img" style="background-image:url(images/cesta-pequena.png);"></div></td>
 						        
 						        <td class="product-name">
-						        	<h3>Cesta Pequena</h3>
+						        	<h3>{{user.product}}</h3>
 						        	<p> 1 Cheiro-verde, 1 Alface, 1kg Pepino</p>
 						        </td>
 						        
@@ -105,7 +106,7 @@
 					             	<input onchange="alterou()"type="text" id="cesta1" name="quantity" class="quantity form-control input-number" value="0" min="0" max="100">
 					          	</div>
 					          </td>
-						        
+							  <% } %>
 						        <td  class="total"  > <p id="total1">R$00.00</p>
 									<script>
 										function alterou()
