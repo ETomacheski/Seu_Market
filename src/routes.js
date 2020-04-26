@@ -70,5 +70,10 @@ routes.get('/vender', (req, res) => {
     res.render('produtor');
 });
 
+routes.get('/sair',(req,res)=>{
+    req.logout();
+	res.redirect('/a')
+})
+
 
 module.exports = routes;
