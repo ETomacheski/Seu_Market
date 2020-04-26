@@ -10,7 +10,7 @@ module.exports = {
             include: { association : 'products' }
         });
 
-        return res.json(user);
+        return res.render('listaprodutos',{user});
     },
 
     async create(req, res) {
