@@ -4,8 +4,7 @@
   "main": "index.js",
   "license": "",
   "scripts": {
-    "start": "nodemon src/server.js",
-    "dev": "nodemon src/server.js"
+    "start": "node src/server.js"
   },
   "dependencies": {
     "bcrypt": "^4.0.1",
