@@ -103,79 +103,16 @@
 						        
 						        <td class="quantity">
 						        	<div class="input-group mb-3">
-					             	<input onchange="alterou()"type="text" id="cesta1" name="quantity" class="quantity form-control input-number" value="0" min="0" max="100">
+					             	<input onchange="(alterou(<%=products.id %>,<%=products.price%>),precofinal(<%=products.price%>,<%=products.id %>));"  type="text" id="<%=products.id %>" name="quantity" class="quantity form-control input-number" value="0" min="0" max="100">
 					          	</div>
 					          </td>
-							<% }) %>
-						        <td  class="total"  > <p id="total1">R$00.00</p>
-									<script>
-										function alterou()
-										{
-											total();
-											var cesta1 = document.getElementById('cesta1').value;
-											
-											document.getElementById("total1").innerHTML = "R$"+cesta1*10+".00";
-										}
-									</script>
+							
+						        <td  class="total"  > <p id="<%=products.id %>total">R$00.00</p>
+									
 								</td>
 						      </tr>
-
-						      <tr class="text-center">
-						        <td class="product-remove">•</td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/cesta-media.png);"></div></td>
-						        
-						        <td class="product-name">
-						        	<h3>Cesta Média</h3>
-						        	<p>1 Cheiro-verde, 1 Alface, 1kg Pepino, 1Kg de Batata-doce, 100g de pimenta de cheiro</p>
-						        </td>
-						        
-						        <td class="price">$17.00</td>
-						        
-						        <td class="quantity">
-						        	<div class="input-group mb-3">
-					             	<input onchange="alterou2()"  type="text" id="cesta2" name="quantity" class="quantity form-control input-number" value="0" min="0" max="100">
-					          	</div>
-					          </td>
-						        
-							  <td  class="total"  > <p id="total2">R$00.00</p>
-								<script>
-									function alterou2(){
-										total();
-										var cesta2 = document.getElementById('cesta2').value;
-									
-										document.getElementById("total2").innerHTML ="R$"+ cesta2*17+".00";
-									}
-								</script>
-							</td>
-							  </tr>
-							  <tr class="text-center">
-						        <td class="product-remove">•</td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/cesta-grande.png);"></div></td>
-						        
-						        <td class="product-name">
-						        	<h3>Cesta Grande</h3>
-						        	<p>1 Cheiro-verde, 1 Alface, 1kg Pepino, 1Kg de Batata-doce, 100g de pimenta de cheiro, 1 und Repolho, 1kg de Tomate, 1 und Couver-Flor</p>
-						        </td>
-						        
-						        <td class="price">$30.00</td>
-						        
-						        <td class="quantity">
-						        	<div class="input-group mb-3">
-					             	<input onchange="alterou3()"  type="text" id="cesta3" name="quantity" class="quantity form-control input-number" value="0" min="0" max="100">
-					          	</div>
-					          </td>
-						        
-							  <td  class="total"  > <p id="total3">R$00.00</p>
-								<script>
-									function alterou3(){
-										total();
-										var cesta3 = document.getElementById('cesta3').value;
-										document.getElementById("total3").innerHTML ="R$"+ cesta3*30+".00";
-									}
-								</script>
-						      </tr>
+							<% }) %>
+						      
 						    </tbody>
 						  </table>
 					  </div>
@@ -217,16 +154,14 @@
     			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
     				<div class="cart-total mb-3">
     					<h3>Preço</h3>
-    					<p class="d-flex">
-    						<span>Entrega</span>
-    						<span>R$5.00</span>
-    					</p>
+    					
     					<hr>
     					<p class="d-flex total-price">
     						<span>Total</span>
     						<span id="valortotal">R$00.00</span>
     					</p>
     				</div>
+					<p><a onclick="teste({<%=product%>})" class="btn btn-primary py-3 px-4">Calcular Total!</a></p>
     				<p><a onclick="zap()" class="btn btn-primary py-3 px-4">Solicitar pedido!</a></p>
     			</div>
     		</div>

@@ -1,23 +1,23 @@
+var global = "teste"
+function precofinal(price, id){
+   
+    var antigo =  document.getElementById(id+"total").innerHTML;
+    console.log(antigo);
+    var total = (document.getElementById(id).value)*price;
+    
+   
+    console.log(global);
 
-function precofinal(){
-    
-    var cesta1 = document.getElementById('cesta1').value;
-    var cesta2 = document.getElementById('cesta2').value;
-    var cesta3 = document.getElementById('cesta3').value
-    var valor = cesta1*10 + cesta2*17 + cesta3*30;
-    
-    return valor;
+    global = "funciona";
+    var valortotal=document.getElementById(valortotal).value;
+
+    //var soma = valor;
+    //document.getElementById("valortotal").innerHTML ="R$"+valor+".00";
+    return soma;
+
 
 }
-function total(){
-										
-    var cesta1 = document.getElementById('cesta1').value;
-    var cesta2 = document.getElementById('cesta2').value;
-    var cesta3 = document.getElementById('cesta3').value
-    var valor =(cesta1*10 + cesta2*17 + cesta3*30)+5;
-    //Document.getElementById('total1').innerhtml= "cesta1*10";
-    document.getElementById("valortotal").innerHTML ="R$"+valor+".00";
-}
+
 function zap(){
     
     var preco = precofinal();
@@ -48,4 +48,16 @@ function zap(){
     
     
 
+}
+function alterou(id,price)
+{
+   // total();
+
+    var cesta1 = document.getElementById(id).value;
+    console.log(global)
+    
+    document.getElementById(id+"total").innerHTML = "R$"+cesta1*price;
+}
+function teste(product){
+    console.log("agora foi"+product)
 }
