@@ -84,21 +84,21 @@
 						    </thead>
 						    <tbody>
 							<% if (products != null) {%>
-								<% products.forEach(user => { %>
+								<% products.forEach(produto => { %>
 								<tr class="text-center">
 									<td class="product-remove">•</td>
 									
 									<td class="image-prod"><div class="img" style="background-image:url(images/cesta-pequena.png);"></div></td>
 									
 									<td class="product-name">
-										<h3><%= user.name %></h3>
+										<h3><%= produto.name %></h3>
 				
 									</td>
 									
-									<td class="price">R$<%= user.price %></td>
+									<td class="price">R$<%= produto.price %></td>
 									
 									<td class="product-name">
-									<p> user.description</p>
+									<p><%= produto.description %></p>
 								</td>
 							
 								</tr>
