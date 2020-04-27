@@ -20,8 +20,6 @@ routes.get('/', (req, res) => {
 routes.get('/carrinho', cartController.listAll);
 routes.post('/carrinho', cartController.listByCity);
 
-routes.get('/produtor', filterController.index);
-
 routes.get('/contato', (req, res) => {
     res.render('contact');
 });
@@ -30,7 +28,7 @@ routes.get('/contato', (req, res) => {
 // Usuário
 routes.get('/usuarios', UserController.index);
 
-routes.get('/cadastro', (req,res) => {
+routes.get('/cadastro', (req, res) => {
     res.render('register');
 });
 routes.post('/cadastro', multer.single('image'), UserController.create);
@@ -49,19 +47,15 @@ routes.post('/login', SessionController.store);
 // Rotas autenticadas
 routes.use(Auth);
 
-routes.get('/produtor', (req, res) => {
-    res.render('produtor');
-});
-
-// routes.delete('/produtos/:id', ProductController.delete);
+routes.get('/produtor', filterController.index);
 
 routes.get('/publicar', (req, res) => {
     res.render('add');
 });
 
-routes.post('/publicar/:id' , multer.single('image'), ProductController.create);
+routes.post('/publicar/:id', multer.single('image'), ProductController.create);
 
-routes.get('/sair',(req,res)=>{
+routes.get('/sair',(req, res)=>{
     req.logout();
 	res.redirect('/');
 })

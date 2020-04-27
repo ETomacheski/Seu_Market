@@ -17,7 +17,6 @@ class SessionController{
 
         const token = jwt.sign({ id: user.id }, process.env.APP_SECRET);
         var id = user.id;
-        console.log(id)
         req.session.token = token;
         req.session.user_id= id;
         res.redirect('/publicar')
