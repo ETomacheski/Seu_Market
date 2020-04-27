@@ -20,6 +20,8 @@ routes.get('/', (req, res) => {
 routes.get('/carrinho', cartController.listAll);
 routes.post('/carrinho', cartController.listByCity);
 
+routes.get('/produtor', filterController.index);
+
 routes.get('/contato', (req, res) => {
     res.render('contact');
 });

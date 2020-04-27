@@ -5,13 +5,15 @@ module.exports = {
 
     async index(req, res) {
         
-        const { id } = req.params;
+        const { user } = req.query;
         
-        const product =  await Product.findOne({ where: {user_id: id} }, {
+        const products =  await Product.findAll({ where: {user_id: user} }, {
             include: { association: 'products' }
         });
 
-        return res.json(product);
+        console.log(products);
+
+        res.render('produtor', {products: products})
     }
 
 }

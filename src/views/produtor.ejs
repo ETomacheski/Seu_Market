@@ -83,61 +83,27 @@
 						      </tr>
 						    </thead>
 						    <tbody>
-						      <tr class="text-center">
-						        <td class="product-remove">•</td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/cesta-pequena.png);"></div></td>
-						        
-						        <td class="product-name">
-						        	<h3>Cesta Pequena</h3>
-			
-						        </td>
-						        
-						        <td class="price">R$10.00</td>
-						        
-						        <td class="product-name">
-						    	 <p> 1 Cheiro-verde, 1 Alface, 1kg Pepino</p>
-					          </td>
-						 
-						      </tr>
-
-						      <tr class="text-center">
-						        <td class="product-remove">•</td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/cesta-media.png);"></div></td>
-						        
-						        <td class="product-name">
-						        	<h3>Cesta Média</h3>
-						        	
-						        </td>
-						        
-						        <td class="price">$17.00</td>
-						        
-						        <td class="quantity">
-						       		 <p>1 Cheiro-verde, 1 Alface, 1kg Pepino, 1Kg de Batata-doce, 100g de pimenta de cheiro</p>
-					          	</div>
-					          </td>
-						        
-							 
-							  </tr><!-- END TR-->
-							  <tr class="text-center">
-						        <td class="product-remove">•</td>
-						        
-						        <td class="image-prod"><div class="img" style="background-image:url(images/cesta-grande.png);"></div></td>
-						        
-						        <td class="product-name">
-						        	<h3>Cesta Grande</h3>
-						        	
-						        </td>
-						        
-						        <td class="price">$30.00</td>
-						        
-						        <td class="quantity">
-						        	<p>1 Cheiro-verde, 1 Alface, 1kg Pepino, 1Kg de Batata-doce, 100g de pimenta de cheiro, 1 und Repolho, 1kg de Tomate, 1 und Couver-Flor</p>
-					          	</div>
-					          </td>
-						        
-						      </tr>
+							<% if (products != null) {%>
+								<% products.forEach(user => { %>
+								<tr class="text-center">
+									<td class="product-remove">•</td>
+									
+									<td class="image-prod"><div class="img" style="background-image:url(images/cesta-pequena.png);"></div></td>
+									
+									<td class="product-name">
+										<h3><%= user.name %></h3>
+				
+									</td>
+									
+									<td class="price">R$<%= user.price %></td>
+									
+									<td class="product-name">
+									<p> user.description</p>
+								</td>
+							
+								</tr>
+								<% }) %>
+							<% } %>
 						    </tbody>
 						  </table>
 					  </div>
