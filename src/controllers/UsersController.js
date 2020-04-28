@@ -17,7 +17,8 @@ module.exports = {
         password = bcrypt.hashSync(password, salt);        
         
         if (req.file != null) {
-            image = req.file.path;
+            image = req.file.filename;
+            console.log(`IMAGE: ${image}`);
         }
 
         await User.create( 
@@ -55,7 +56,6 @@ module.exports = {
         
         if (req.file != null) {
             image = String(req.file.path);
-            image = image.replace('uploads////', '');
         }
 
         user.update({ name, email, password, image: image, delivery_time, city, phone })
