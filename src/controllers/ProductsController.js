@@ -27,7 +27,7 @@ module.exports = {
             user_id,
         })
 
-        return res.json(product);
+        return res.redirect('/publicar');
     },
 
     async delete(req, res) {
