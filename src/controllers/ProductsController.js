@@ -15,7 +15,9 @@ module.exports = {
 
     async create(req, res) {
         const  user_id = req.params.id;
-        const { name, description, price, image } = req.body;       
+        const { name, description, price } = req.body;
+        const image = req.file.filename;
+        console.log(image);  
         
         const product = await Product.create({
             name,
