@@ -17,7 +17,7 @@ module.exports = {
         password = bcrypt.hashSync(password, salt);        
         
         if (req.file != null) {
-            image = req.file.path;          
+            image = req.file.path;
         }
 
         await User.create( 

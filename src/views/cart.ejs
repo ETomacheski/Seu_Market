@@ -102,8 +102,14 @@
 								<% users.forEach(user => { %>
 									<tr class="text-center">
 										<td class="product-remove">•</td>
-										<td class="image-prod"><div class="img" style="background-image:url(images/produtor1.jpg);"></div></td>
-										
+										<% if(user.image == null) { %>
+											<td class="image-prod"><div class="img" style="background-image:url(images/produtor1.png);"></div></td>
+										<% } %>
+
+										<% if (user.image != null) {%>
+											<td class="image-prod"><div class="img" style="background-image:url(../../<%=user.image%>);"></div></td>
+										<% } %>
+
 										<td class="product-name">
 											<p><%= user.description %></p>
 										</td>

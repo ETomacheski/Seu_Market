@@ -12,6 +12,7 @@ module.exports = {
 
     async listAll(req, res) {
         const users = await User.findAll();
+        console.log(users);
         res.render('cart', { users: users });
     }
 
