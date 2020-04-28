@@ -54,7 +54,8 @@ module.exports = {
         var image = null;
         
         if (req.file != null) {
-            image = req.file.path;          
+            image = String(req.file.path);
+            image = image.replace('uploads', '');
         }
 
         user.update({ name, email, password, image: image, delivery_time, city, phone })
