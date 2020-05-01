@@ -21,8 +21,8 @@ app.use(helmet());
 
 const limiter = rateLimit({ 
 	windowMs: 1 * 60 * 1000,
-	max: 10000
-	// Limit of 10000 requests a minute.
+	max: 15000
+	// Limit of 15000 requests a minute.
 }); 
 app.use(limiter)
 
